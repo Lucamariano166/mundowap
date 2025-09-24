@@ -59,7 +59,7 @@ class VisitsController extends AppController
         $visits = $this->Visits->find()
             ->contain(['Addresses'])
             ->where(['Visits.date' => $date])
-            ->orderBy(['Visits.created' => 'ASC'])
+            ->order(['Visits.created' => 'ASC'])
             ->toArray();
 
         return $this->response
